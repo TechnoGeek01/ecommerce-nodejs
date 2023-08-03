@@ -45,6 +45,7 @@ const ProductSchema = new mongoose.Schema(
 
     colors: {
       type: [String],
+      default: ["#222"],
       required: true,
     },
 
@@ -59,7 +60,7 @@ const ProductSchema = new mongoose.Schema(
     },
 
     inventory: {
-      type: Boolean,
+      type: Number,
       required: true,
       default: 15,
     },
