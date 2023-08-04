@@ -96,6 +96,7 @@ ProductSchema.virtual("reviews", {
   match: { rating: 1 },
 });
 
+// deleting all reviews of a product when the product is deleted
 ProductSchema.pre("deleteOne", async function () {
   await this.model("Review").deleteMany({ product: this._id });
 });
